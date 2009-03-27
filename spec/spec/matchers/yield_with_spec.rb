@@ -126,3 +126,10 @@ module Spec
     end
   end
 end
+
+describe "should yield_with" do
+  def yielder; yield; end
+  it "should pass if yielded" do
+    lambda {|&block| yielder(&block)}.should yield_with
+  end
+end

@@ -73,8 +73,8 @@ module Spec
     #
     #   lambda {|block| do_something_that_will_not_yield(&block) }.should_not yield_with
     #   lambda {|block| do_something_that_will_not_yield(&block) }.should_not yield_with(anything())
-    def yield_with(sym=nil)
-      Matchers::YieldWith.new(sym)
+    def yield_with(*args, &block)
+      Matchers::YieldWith.new(*args, &block)
     end
   end
 end
